@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Plugin.Media;
 using PM022PP0122.Models;
-
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -63,7 +63,6 @@ namespace PM022PP0122.Views
                 await DisplayAlert("ha ocurrido un error", "Aviso", "OK");
             }
         }
-
         private async void btneliminar_Clicked(object sender, EventArgs e)
         {
             var emple = new Empleado
@@ -77,7 +76,6 @@ namespace PM022PP0122.Views
 
             var result = await App.DBase.EmpleDelete(emple);
         }
-
         private async void btnactualizar_Clicked(object sender, EventArgs e)
         {
             var emple = new Empleado
@@ -91,7 +89,6 @@ namespace PM022PP0122.Views
 
             var result = await App.DBase.EmpleDelete(emple);
         }
-
         private async void btnfoto_Clicked(object sender, EventArgs e)
         {
             FileFoto = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
@@ -110,6 +107,13 @@ namespace PM022PP0122.Views
                     return FileFoto.GetStream();
                 });
             }
+        }
+
+        protected async override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            var localizacion = await Geolocation.GetLocationAsync();
         }
     }
 }
