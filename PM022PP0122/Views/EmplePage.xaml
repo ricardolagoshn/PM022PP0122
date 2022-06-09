@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PM022PP0122.Views.EmplePage">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Image x:Name="Foto" BackgroundColor="Bisque"
+                   WidthRequest="100" HeightRequest="170" />
+
+            <Button Text="Tomar Foto" x:Name="btnfoto" Margin="10,0,10,0" Clicked="btnfoto_Clicked"/>
+
+            <Label Text="ID" FontSize="Title" Padding="0,0,0,0" TextColor="White"/>
+            <Entry Placeholder="Id" 
+                   Keyboard="Text" x:Name="txtid" 
+                   Margin="5,0,5,0" TextColor="Black" Text="{Binding id}"/>
+
+            <Label Text="Nombre" FontSize="Title" Padding="0,0,0,0" TextColor="White"/>
+            <Entry Placeholder="Nombre" Keyboard="Text" 
+                   x:Name="txtnombre" Margin="5,0,5,0" 
+                   TextColor="Black"
+                   Text="{Binding nombre}"/>
+
+            <Label Text="Edad" FontSize="Title" Padding="0,0,0,0" TextColor="White"/>
+            <Entry Placeholder="Edad" Keyboard="Text"
+                   x:Name="txtedad" Margin="5,0,5,0" 
+                   TextColor="Black"
+                   Text="{Binding edad}"/>
+
+           
+
+            <DatePicker Format="D" VerticalOptions="CenterAndExpand"
+                        x:Name="fecha"
+                        Date="{Binding fecha_ingreso}"/>
+
+            <Button Text="Agregar" x:Name="btnagregar" Margin="10,0,10,0" Clicked="btnagregar_Clicked"/>
+
+            <Button Text="Actualizar" x:Name="btnactualizar" Margin="10,0,10,0" Clicked="btnactualizar_Clicked" />
+
+            <Button Text="Eliminar" x:Name="btneliminar" Margin="10,0,10,0" Clicked="btneliminar_Clicked" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
