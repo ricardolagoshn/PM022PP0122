@@ -21,5 +21,11 @@ namespace PM022PP0122.Views
         {
 
         }
+
+        protected async override void OnAppearing()
+        {
+            base.OnAppearing();
+            ListEmple.ItemsSource = await App.DBase.obtenerListaEmple();
+        }
     }
 }

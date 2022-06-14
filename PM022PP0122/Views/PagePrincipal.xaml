@@ -9,11 +9,15 @@
                      Priority="0"
                      Clicked="toolmenu1_Clicked" />
 
-
         <ToolbarItem Text="Foto" x:Name="toolmenu2"
                      Order="Primary"
                      Priority="0"
                      Clicked="toolmenu2_Clicked" />
+
+        <ToolbarItem Text="Mapa" x:Name="toolmenu3"
+                     Order="Primary"
+                     Priority="0"
+                     Clicked="toolmenu3_Clicked" />
 
     </ContentPage.ToolbarItems>
 

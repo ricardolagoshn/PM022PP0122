@@ -41,5 +41,10 @@ namespace PM022PP0122.Views
         {
             await Navigation.PushAsync(new PhotoPage());
         }
+
+        private void toolmenu3_Clicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }
